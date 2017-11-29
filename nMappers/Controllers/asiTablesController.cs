@@ -23,9 +23,9 @@ namespace nMappers.Controllers
             ServerDetails LineDetails = (ServerDetails)HttpContext.Session["ServerDetails"];
             return View(asiTablesListModel.ReadAll(LineDetails));
         }
-        public ActionResult TableInDetails(string? Name)
+        public ActionResult TableInDetails()
         {
-            DataSet TableDetails = string.IsNullOrEmpty(Name.Value) ? new DataSet() : asiSSMSTrans.FillDataSet(new SqlConnection(), "sp_help ", new object[] { Name.Value });
+            DataSet TableDetails = string.IsNullOrEmpty("") ? new DataSet() : asiSSMSTrans.FillDataSet(new SqlConnection(), "sp_help ", new object[] { "" });
             return View(TableDetails);
         }
     }

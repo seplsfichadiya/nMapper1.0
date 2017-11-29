@@ -1,0 +1,73 @@
+﻿@model asi.Data.ServerDetails
+@{
+    ViewBag.Title = "User" + " | nMapper";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/cssBootstrap4")
+    @Scripts.Render("~/bundles/jsBootstrap4")
+    <script>
+        $(document).ready(function () {
+
+            $('#IsWindowAuth').change(function () {
+                alert($('#IsWindowAuth').checked);
+                if ($('.IsWindow').checked) {
+                    $('.isWinAuth').hide();
+                }
+                else {
+                    $('.isWinAuth').show();
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    @using (Html.BeginForm("IsValidAuth", "asiAuth", Model, FormMethod.Post))
+    {
+        <div class="col-md-4 col-md-offset-4">
+            <h4>Authentication</h4>
+            <hr />
+            <div class="form-group row">
+                <label class="control-label col-md-6">Server Name</label>
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.ServerName)
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-6">Database Name</label>
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.Database)
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-6">Window Authentication</label>
+                <div class="col-md-1">
+                    @Html.EditorFor(model => model.IsWindowAuth)
+                </div>
+            </div>
+            <div class="form-group row isWinAuth">
+                <label class="control-label col-md-6">User ID</label>
+                <div class="col-md-6">
+                    @Html.EditorFor(model => model.UserID)
+                </div>
+            </div>
+            <div class="form-group row isWinAuth">
+                <label class="control-label col-md-6">Password</label>
+                <div class="col-md-6">
+                    @Html.PasswordFor(model => model.Password)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-6 col-md-10">
+                    <input type="submit" value="Access" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

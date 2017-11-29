@@ -26,6 +26,15 @@ namespace nMappers
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/cssBootstrap4").Include(
+                      "~/Content/bootstrap.min.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jsBootstrap4").Include(
+                        "~/Scripts/jquery-3.0.0.slim.min.js",
+                        "~/Scripts/tether.min.js",
+                        "~/Scripts/bootstrap.min.js"));
+
         }
     }
 }

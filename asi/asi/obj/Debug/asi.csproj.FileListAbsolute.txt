@@ -1,0 +1,10 @@
+D:\sfichadiya\aLib\asi\asi\bin\Debug\asi.dll.config
+D:\sfichadiya\aLib\asi\asi\bin\Debug\asi.dll
+D:\sfichadiya\aLib\asi\asi\bin\Debug\asi.pdb
+D:\sfichadiya\aLib\asi\asi\bin\Debug\EntityFramework.dll
+D:\sfichadiya\aLib\asi\asi\bin\Debug\EntityFramework.SqlServer.dll
+D:\sfichadiya\aLib\asi\asi\bin\Debug\EntityFramework.xml
+D:\sfichadiya\aLib\asi\asi\bin\Debug\EntityFramework.SqlServer.xml
+D:\sfichadiya\aLib\asi\asi\obj\Debug\asi.dll
+D:\sfichadiya\aLib\asi\asi\obj\Debug\asi.pdb
+D:\sfichadiya\aLib\asi\asi\obj\Debug\asi.csprojResolveAssemblyReference.cache

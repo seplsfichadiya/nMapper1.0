@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nMappers", "nMappers\nMappers.csproj", "{9DFFC134-CD29-4F3A-9530-73837593045A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asi", "..\..\..\aLib\asi\asi\asi.csproj", "{5198F7E3-4840-4906-BEC8-13F41A7D6BA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "asi", "asi\asi\asi.csproj", "{5198F7E3-4840-4906-BEC8-13F41A7D6BA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

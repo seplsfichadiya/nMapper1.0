@@ -1,0 +1,2 @@
+D:\sfichadiya\wApp\Examples\nMappers\nMappers\nMappers\obj\Debug\nMappers.csprojResolveAssemblyReference.cache
+D:\sfichadiya\PluginsSource\seplsfichadiya\nMapper1.0\nMappers\obj\Debug\nMappers.csprojResolveAssemblyReference.cache

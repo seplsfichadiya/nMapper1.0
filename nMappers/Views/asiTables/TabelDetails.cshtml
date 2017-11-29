@@ -1,0 +1,39 @@
+﻿@model nMappers.Models.asiTableDetailsModel
+
+<div>
+    @using (System.Data.DataSet itemTable = Model.tableDetails)
+    {
+        foreach (System.Data.DataTable item in itemTable.Tables)
+        {
+            <table>
+                <caption>
+                    @item.TableName
+                </caption>
+                <thead>
+                    <tr>
+                        @foreach (System.Data.DataColumn item_Columns in @item.Columns)
+                        {
+                            <th>
+                                @item_Columns.ColumnName
+                            </th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (System.Data.DataRow itemrow in @item.Rows)
+                    {
+                        <tr>
+                            @foreach (System.Data.DataColumn item_Col in @item.Columns)
+                            {
+                                <td>
+                                    @itemrow[item_Col.ColumnName]
+                                </td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    }
+
+</div>

@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using System.Data.SqlClient;
+using nMappers.Codes;
 using asi;
 using asi.Data;
 
@@ -26,11 +27,12 @@ namespace nMappers.Models
 
         public static List<asiTablesListModel> ReadAll(ServerDetails LineDetails)
         {
-            return (from DataRow dr in (asiSSMSTrans.FillDataTable(ServerDetails.sConnection(LineDetails), "", new object[] { })).Rows
+            asiTablesStruct.ScriptExecution(LineDetails);
+            return (from DataRow dr in (asiSSMSTrans.FillDataTable(ServerDetails.sConnection(LineDetails), "sp$app@Tables$ReadAll", new object[] { false })).Rows
                     select new asiTablesListModel
                     {
-                        objectID = asiDataDefault.getInt64(dr[""]),
-                        tableName = Convert.ToString(dr[""])
+                        objectID = asiDataDefault.getInt64(dr["object_id"]),
+                        tableName = asiDataDefault.getString(dr["name"])
                     }).ToList();
         }
     }

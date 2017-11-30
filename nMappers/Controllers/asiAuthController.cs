@@ -15,10 +15,26 @@ namespace nMappers.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult IsValidAuth(ServerDetails LineDetails)
         {
-            return View();
+            try
+            {
+                if (asiSSMSTrans.IsConnect(ServerDetails.sConnection(LineDetails)))
+                {
+                    HttpContext.Session["ServerDetails"] = LineDetails;
+                    return RedirectToAction("Index", "asiTables", LineDetails);
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
     }
 }

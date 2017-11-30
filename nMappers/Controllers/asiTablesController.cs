@@ -16,17 +16,14 @@ namespace nMappers.Controllers
         // GET: /asiTables/
         public ActionResult Index()
         {
-            return View();
-        }
-        public ActionResult TableList()
-        {
             ServerDetails LineDetails = (ServerDetails)HttpContext.Session["ServerDetails"];
-            return View(asiTablesListModel.ReadAll(LineDetails));
-        }
+            return View(asiTablesListModel.ReadAll(LineDetails));         
+        }        
         public ActionResult TableInDetails()
         {
-            DataSet TableDetails = string.IsNullOrEmpty("") ? new DataSet() : asiSSMSTrans.FillDataSet(new SqlConnection(), "sp_help ", new object[] { "" });
-            return View(TableDetails);
+            //DataSet TableDetails = string.IsNullOrEmpty("") ? new DataSet() : asiSSMSTrans.FillDataSet(new SqlConnection(), "sp_help ", new object[] { "" });
+            //return View(TableDetails);
+            return View();
         }
     }
 }

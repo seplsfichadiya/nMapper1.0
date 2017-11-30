@@ -1,7 +1,25 @@
-﻿@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model List<nMappers.Models.asiTablesListModel>
+@{
+    Layout = null;
 }
 
-<h2>@ViewBag.Title + "| Table Details"</h2>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    @Html.ActionLink(item.tableName, "TableDetails?Name=" + Convert.ToString(item.tableName), "asiTables")
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
